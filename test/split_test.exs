@@ -2,15 +2,18 @@ defmodule SplitTest do
   use ExUnit.Case
   doctest Split
 
-  test "greets the world" do
-    assert Split.hello() == :world
+  test "splits the string with space delimitter" do
+    assert Split.split("Hello World", " ") == ["Hello", "World"]
   end
 
+<<<<<<< HEAD
 
   test "splits the string with space delimitter" do
     assert Split.split("Hello World", " ") == ["Hello", "World"]
   end
 
+=======
+>>>>>>> origin/utf8
   test "doesn't crash when no occurences of delimitter" do
     assert Split.split("ABC", "D") == ["ABC"]
   end
@@ -26,4 +29,11 @@ defmodule SplitTest do
   test "splits empty string" do
     assert Split.split("", " ") == [""]
   end
+<<<<<<< HEAD
+=======
+
+  test "splits string with utf8 characters" do
+    assert Split.split("i löve sweden", "ö") == ["i l", "ve sweden"]
+  end
+>>>>>>> origin/utf8
 end
